@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "Triangle\Triangle.csproj", "{CBEE74CA-0E9C-45FD-8832-4FC41899C880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleTest", "TriangleTest\TriangleTest.csproj", "{ACE1C9D1-06DE-48E2-BBDE-0C7AC42D568B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBEE74CA-0E9C-45FD-8832-4FC41899C880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEE74CA-0E9C-45FD-8832-4FC41899C880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEE74CA-0E9C-45FD-8832-4FC41899C880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEE74CA-0E9C-45FD-8832-4FC41899C880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE1C9D1-06DE-48E2-BBDE-0C7AC42D568B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE1C9D1-06DE-48E2-BBDE-0C7AC42D568B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE1C9D1-06DE-48E2-BBDE-0C7AC42D568B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE1C9D1-06DE-48E2-BBDE-0C7AC42D568B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
