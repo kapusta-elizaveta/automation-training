@@ -6,8 +6,11 @@ namespace Triangle
     {
         public bool Cheking(int a, int b, int z)
         {
-            if ((a + b > z) && (a + z > b) && (b + z > a) ) return true;
-            else return false;
+            if (a > 0 && b > 0 && z > 0)
+            {
+                return a + b > z && a + z > b && z + b > a;
+            }
+            throw new TriangleException(" Side is negative");
 
         }
     }

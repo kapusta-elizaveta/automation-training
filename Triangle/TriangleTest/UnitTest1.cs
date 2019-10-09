@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Triangle;
 
@@ -6,70 +7,71 @@ namespace Tests
     public class Tests
     {
         
-        public TriangleCheck tr = new TriangleCheck();
+        public TriangleCheck triangle = new TriangleCheck();
         [SetUp]
         public void Setup()
         {
         }
 
         [Test]
-        public void Test1()
+        public void EnterNegative()
         {
-            Assert.AreEqual(true, tr.Cheking(9, 10, 6));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(false, tr.Cheking(9, 1, 6));
-        }
-
-        [Test]
-        public void Test3()
-        {
-            Assert.AreNotEqual(false, tr.Cheking(9, 10, 6)); 
+            Assert.Throws<TriangleException>(() => triangle.Cheking(-1, 3, 6));
         }
         
         [Test]
-        public void Test4()
+        public void AllZeroSides()
         {
-            Assert.AreNotEqual(true, tr.Cheking(9, 1, 6));
+            Assert.Throws<TriangleException>(() => triangle.Cheking(0, 0, 0));
         }
 
         [Test]
-        public void Test5()
+        public void EquilateralTriangle()
         {
-            Assert.IsFalse(tr.Cheking(9,1,6));
+            Assert.AreEqual(true, triangle.Cheking(9, 10, 6));
         }
 
         [Test]
-        public void Test6()
+        public void SumOfTwoSidesEqualsThird()
         {
-            Assert.IsTrue(tr.Cheking(9,10,6));
+            Assert.AreEqual(false, triangle.Cheking(9, 1, 10));
         }
 
         [Test]
-        public void Test7()
+        public void OneZeroSide()
         {
-            Assert.That(tr.Cheking(9,6,10), Is.EqualTo(true));
-        }
-
-        [Test]
-        public void Test8()
-        {
-            Assert.That(tr.Cheking(9,6,1), Is.EqualTo(false));
+            Assert.Throws<TriangleException>(() => triangle.Cheking(10, 0, 10));
         }
         
         [Test]
-        public void Test9()
+        public void IsoscelesTriangle()
         {
-            Assert.True(tr.Cheking(9,6,10));
+            Assert.IsFalse(triangle.Cheking(9,1,6));
+        }
+
+        [Test]
+        public void RightTriangle()
+        {
+            Assert.IsTrue(triangle.Cheking(9,10,6));
+        }
+
+        [Test]
+        public void TrueTriangle()
+        {
+            Assert.That(triangle.Cheking(9,6,10), Is.EqualTo(true));
+        }
+
+        [Test]
+        public void AllOfTheSideIsMaxInt()
+        {
+            Assert.That(triangle.Cheking(int.MaxValue,int.MaxValue,int.MaxValue), Is.EqualTo(false));
         }
         
+        
         [Test]
-        public void Test10()
+        public void OneOfTheSideIsMaxInt()
         {
-            Assert.False(tr.Cheking(9,6,1));
+            Assert.False(triangle.Cheking(int.MaxValue,6,1));
         }
     }
 }
