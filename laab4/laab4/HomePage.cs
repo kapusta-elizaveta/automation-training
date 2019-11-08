@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace laab4
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(30));
         }
 
         [FindsBy(How = How.ClassName, Using = "link-auth")]
@@ -99,6 +101,12 @@ namespace laab4
         public void SearchApartment()
         {
             this.SearchButton.Click();
+        }
+
+        public bool ErrorMessageExpected()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            return wait.Until(ExpectedConditions.AlertIsPresent()) != null;
         }
     }
 }

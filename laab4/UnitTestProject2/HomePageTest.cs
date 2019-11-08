@@ -20,7 +20,6 @@ namespace lab4Test
         public void SetupTest()
         {
             this.Driver = new ChromeDriver();
-           
         }
 
         [TestCleanup]
@@ -35,7 +34,8 @@ namespace lab4Test
             HomePage homePage = new HomePage(this.Driver);
             homePage.goToPage();
             homePage.EntryGmail();
-            
+            Assert.IsTrue(homePage.ErrorMessageExpected());
+
         }
 
         [TestMethod]
@@ -48,6 +48,7 @@ namespace lab4Test
             homePage.ChooseVisitors();
             homePage.ChooseApartment();
             homePage.SearchApartment();
+            Assert.IsTrue(homePage.ErrorMessageExpected());
         }
 
 
