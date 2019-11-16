@@ -11,7 +11,10 @@ namespace laab4
 {
     public class HomePage
     {
+
+
         private IWebDriver driver;
+        IWebElement source;
 
         public HomePage(IWebDriver driver)
         {
@@ -29,13 +32,10 @@ namespace laab4
         [FindsBy(How = How.ClassName, Using = "js-hbi-login-fb")]
         public IWebElement FaceBookPersonalAccount { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "link-auth")]
-        public IWebElement ChooseHotels { get; set; }
-
         [FindsBy(How = How.ClassName, Using = "react-datepicker-wrapper")]
         public IWebElement ArrivalDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//*[@aria-label='day-20']")]
+        [FindsBy(How = How.XPath, Using = "//*[@aria-label='day-23']")]
         public IWebElement TittleArrivalDate { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "react-datepicker-wrapper")]
@@ -44,19 +44,22 @@ namespace laab4
         [FindsBy(How = How.XPath, Using = "//*[@aria-label='day-23']")]
         public IWebElement TittleDepartureDate { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "c0115")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='root']/div/div[3]/div")]
         public IWebElement Visitors { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "c0138")]
+        [FindsBy(How = How.ClassName, Using = "c0137")]
         public IWebElement VisitorsPlus { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "c0119")]
-        public IWebElement Apartment { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "input.select-search-box__search[placeholder='Выберите отель AZIMUT']")]
+        public IWebElement City { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "li.select-search-box__row[data-value='102168']")]
+        public IWebElement ApartmentTitle { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "c0138")]
         public IWebElement ApartmentPlus { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "c016")]
+        [FindsBy(How = How.CssSelector, Using = "button[class='c0127']")]
         public IWebElement SearchButton { get; set; }
 
 
@@ -92,10 +95,15 @@ namespace laab4
          
         }
 
-        public void ChooseApartment()
+        public void ChooseCity(string textToType)
         {
-            this.Apartment.Click();
-            this.Apartment.Click();
+            this.City.Click();
+            this.City.SendKeys(textToType);
+        }
+
+        public void ChooseApartmnet()
+        {
+            this.ApartmentTitle.Click();
         }
 
         public void SearchApartment()
@@ -103,10 +111,17 @@ namespace laab4
             this.SearchButton.Click();
         }
 
-        public bool ErrorMessageExpected()
+        public IWebElement FindElementByLocator(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-            return wait.Until(ExpectedConditions.AlertIsPresent()) != null;
+            try
+            {
+                source = driver.FindElement(locator);
+                return source;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
