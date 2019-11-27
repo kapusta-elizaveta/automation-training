@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace laab4
     public class HomePage
     {
         private IWebDriver driver;
+        IWebElement source;
 
         public HomePage(IWebDriver driver)
         {
@@ -27,8 +29,11 @@ namespace laab4
         [FindsBy(How = How.ClassName, Using = "js-hbi-login-fb")]
         public IWebElement FaceBookPersonalAccount { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "link-auth")]
-        public IWebElement ChooseHotels { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "input.select-search-box__search[placeholder='Выберите отель AZIMUT']")]
+        public IWebElement Hotels { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "input.select-search-box__search.select-search-box__options.select-search-box__row[data-value='86207']")]
+        public IWebElement TitleHotels { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "react-datepicker-wrapper")]
         public IWebElement ArrivalDate { get; set; }
@@ -38,6 +43,11 @@ namespace laab4
 
         [FindsBy(How = How.ClassName, Using = "react-datepicker-wrapper")]
         public IWebElement DepartureDate { get; set; }
+
+        public object FindElementByLocator(string xPATHHOTELS)
+        {
+            throw new NotImplementedException();
+        }
 
         [FindsBy(How = How.XPath, Using = "//*[@aria-label='day-23']")]
         public IWebElement TittleDepartureDate { get; set; }
@@ -70,6 +80,16 @@ namespace laab4
             this.FaceBookPersonalAccount.Click();
         }
 
+        public void SelectCity(string textToType)
+        {
+            this.Hotels.Clear();
+            this.Hotels.SendKeys(textToType);
+        }
+
+        public void ChooseHotel()
+        {
+            this.TitleHotels.Click();
+        }
         public void ChooseArrivalDate()
         {
             this.ArrivalDate.Click();
@@ -99,6 +119,33 @@ namespace laab4
         public void SearchApartment()
         {
             this.SearchButton.Click();
+        }
+
+        public bool WaitForElementPresent(By locator, int seconds)
+        {
+            try
+            {
+                new WebDriverWait(driver, TimeSpan.FromSeconds(seconds)).Until(
+                   ExpectedConditions.ElementExists(locator));
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public IWebElement FindElementByLocator(By locator)
+        {
+            try
+            {
+                source = driver.FindElement(locator);
+                return source;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

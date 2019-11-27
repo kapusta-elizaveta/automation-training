@@ -15,6 +15,9 @@ namespace lab4Test
         public IWebDriver Driver { get; set; }
         public WebDriverWait Wait { get; set; }
 
+        public const string HOTELS = "Москва";
+        public const string XPATHHOTELS = "input.select-search-box__search[placeholder='Выберите отель AZIMUT']";
+        IWebElement sourse;
 
         [TestInitialize]
         public void SetupTest()
@@ -26,28 +29,33 @@ namespace lab4Test
         [TestCleanup]
         public void TeardownTest()
         {
-            this.Driver.Quit();
+           this.Driver.Quit();
         }
 
-        [TestMethod]
+       /* [TestMethod]
         public void SignInTest()
         {
             HomePage homePage = new HomePage(this.Driver);
             homePage.goToPage();
             homePage.EntryGmail();
             
-        }
+        }*/
 
         [TestMethod]
         public void SearchApartmentTest()
         {
             HomePage homePage = new HomePage(this.Driver);
             homePage.goToPage();
-            homePage.ChooseArrivalDate();
-            homePage.ChooseDepartureDate();
-            homePage.ChooseVisitors();
-            homePage.ChooseApartment();
-            homePage.SearchApartment();
+            Assert.IsTrue(homePage.WaitForElementPresent(By.CssSelector(XPATHHOTELS), 30));
+            homePage.SelectCity(HOTELS);
+            Assert.AreEqual(HOTELS, homePage.FindElementByLocator(By.CssSelector(XPATHHOTELS)).GetAttribute("value"));
+            homePage.ChooseHotel();
+            // Assert.IsTrue(homePage.FindElementByLocator(By.CssSelector(XPATHHOTELS)).Text.Contains(HOTELS));
+            /* homePage.ChooseArrivalDate();
+             homePage.ChooseDepartureDate();
+             homePage.ChooseVisitors();
+             homePage.ChooseApartment();
+             homePage.SearchApartment();*/
         }
 
 
