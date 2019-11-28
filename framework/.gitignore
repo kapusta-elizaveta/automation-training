@@ -15,4 +15,4 @@ test-output/
 
 # Idea
 .idea/
-*.iml
+*.iml .vs
