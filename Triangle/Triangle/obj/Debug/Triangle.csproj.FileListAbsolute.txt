@@ -1,6 +1,0 @@
-D:\Mine\сишарп\triangle\Triangle\bin\Debug\Triangle.exe
-D:\Mine\сишарп\triangle\Triangle\bin\Debug\Triangle.pdb
-D:\Mine\сишарп\triangle\Triangle\obj\Debug\Triangle.csprojAssemblyReference.cache
-D:\Mine\сишарп\triangle\Triangle\obj\Debug\Triangle.csproj.CoreCompileInputs.cache
-D:\Mine\сишарп\triangle\Triangle\obj\Debug\Triangle.exe
-D:\Mine\сишарп\triangle\Triangle\obj\Debug\Triangle.pdb
