@@ -1,0 +1,24 @@
+2019-12-19 11:50:21,188 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:51:06,498 [12] INFO  Framework.Steps.Step [(null)] - Step created
+2019-12-19 11:51:10,284 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:51:36,486 [12] INFO  Framework.Pages.MainPage [(null)] - Languagr has changed to Deutsch
+2019-12-19 11:51:36,507 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:51:37,237 [12] INFO  Framework.Steps.Step [(null)] - Step created
+2019-12-19 11:51:41,451 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:51:59,462 [12] INFO  Framework.Pages.MainPage [(null)] - Currency has changed to USD
+2019-12-19 11:51:59,476 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:52:00,205 [12] INFO  Framework.Steps.Step [(null)] - Step created
+2019-12-19 11:52:04,415 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:52:14,882 [12] INFO  Framework.Pages.MainPage [(null)] - Subscribe to news
+2019-12-19 11:52:15,468 [12] INFO  Framework.Steps.Step [(null)] - Step created
+2019-12-19 11:52:19,479 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:52:32,643 [12] INFO  Framework.Pages.MainPage [(null)] - MainPage create
+2019-12-19 11:52:34,936 [12] INFO  Framework.Steps.Step [(null)] - Search result shown
+2019-12-19 12:01:00,212 [12] INFO  Framework.Pages.EventsPage [(null)] - EventsPage created
+2019-12-19 12:01:00,243 [12] INFO  Framework.Pages.SearchEventsResultPage [(null)] - SearchEventsResultPage created
+2019-12-19 12:01:15,935 [12] INFO  Framework.Pages.EventsPage [(null)] - EventsPage created
+2019-12-19 12:01:15,936 [12] INFO  Framework.Pages.SearchEventsResultPage [(null)] - SearchEventsResultPage created
+2019-12-19 12:01:28,863 [12] INFO  Framework.Pages.EventsPage [(null)] - Event choosed
+2019-12-19 12:01:28,863 [12] INFO  Framework.Pages.SearchEventsResultPage [(null)] - SearchEventsResultPage created
+2019-12-19 12:01:36,789 [12] INFO  Framework.Pages.SearchEventsResultPage [(null)] - Gallary choosed
+2019-12-19 12:01:36,789 [12] INFO  Framework.Steps.Step [(null)] - Go to Gallary
