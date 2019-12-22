@@ -1,11 +1,12 @@
 ﻿using Framework.Pages;
 using Framework.Steps;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using log4net;
+using NUnit.Framework;
+
 namespace Framework
 {
-    [TestClass]
     public class BonusPageTest
     {
         private const string BASE_URL = "https://azimuthotels.com/bonus/";
@@ -13,7 +14,7 @@ namespace Framework
         private Step step;
         private BonusPage bonusPage;
 
-        [TestInitialize]
+        [SetUp]
         public void SetupTest()
         {
             step = new Step();
@@ -21,19 +22,26 @@ namespace Framework
             bonusPage = new BonusPage(step.driver);
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TeardownTest()
         {
             step.CloseBrowser();
         }
 
-        [TestMethod]
+        [Test]
         public void AttachBonus()
         {
             string emailText = step.GenerateRandomEmailCharLength(5);
             step.GoToPage(BASE_URL);
             bonusPage.EntryBonus(emailText);
             Assert.IsNotNull(step.driver.FindElement(By.XPath(XPATH_CONNECT_BONUS)).Displayed);
+        }
+
+        [Test]
+        public void AA()
+        {
+            int a = 6;
+            Assert.AreEqual(6, a);
         }
     }
 }

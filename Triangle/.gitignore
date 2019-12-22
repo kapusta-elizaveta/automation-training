@@ -20,3 +20,4 @@ bld/
 # NuGet Packages
 packages/*
 *.nupkg
+.vs

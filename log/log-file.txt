@@ -22,3 +22,6 @@
 2019-12-19 12:01:28,863 [12] INFO  Framework.Pages.SearchEventsResultPage [(null)] - SearchEventsResultPage created
 2019-12-19 12:01:36,789 [12] INFO  Framework.Pages.SearchEventsResultPage [(null)] - Gallary choosed
 2019-12-19 12:01:36,789 [12] INFO  Framework.Steps.Step [(null)] - Go to Gallary
+2019-12-22 22:51:31,085 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - BonusPage created
+2019-12-22 22:51:49,192 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - BonusPage created
+2019-12-22 22:52:41,856 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - Get bonus
