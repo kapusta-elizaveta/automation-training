@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DriverBinaries\geckodriver.exe" />
+    <Content Include="result.xml" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

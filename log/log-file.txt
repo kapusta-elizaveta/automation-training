@@ -25,3 +25,5 @@
 2019-12-22 22:51:31,085 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - BonusPage created
 2019-12-22 22:51:49,192 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - BonusPage created
 2019-12-22 22:52:41,856 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - Get bonus
+2019-12-23 11:14:43,605 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - BonusPage created
+2019-12-23 11:15:05,507 [NonParallelWorker] INFO  Framework.Pages.BonusPage [(null)] - Get bonus
